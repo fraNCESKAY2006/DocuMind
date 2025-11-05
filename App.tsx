@@ -76,7 +76,7 @@ const ResultDisplay = ({ content, isLoading }: { content: string | React.ReactNo
     if (!content) return null;
 
     const contentNode = typeof content === 'string'
-        ? <ReactMarkdown remarkPlugins={[remarkGfm]} className="prose prose-sm prose-invert max-w-none prose-p:my-3 prose-ul:my-3 prose-ol:my-3 prose-li:my-1 prose-headings:mb-4 prose-headings:mt-6">{content}</ReactMarkdown>
+        ? <ReactMarkdown remarkPlugins={[remarkGfm]} className="prose prose-sm prose-invert max-w-none prose-p:leading-relaxed prose-p:my-4 prose-ul:my-4 prose-ol:my-4 prose-li:my-1 prose-headings:mb-4 prose-headings:mt-6">{content}</ReactMarkdown>
         : content;
 
     return <div className="mt-4 p-4 bg-white/5 rounded-lg max-h-[60vh] overflow-y-auto">{contentNode}</div>;
