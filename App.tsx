@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import * as geminiService from './services/geminiService';
 import { Document, SummaryTone, CitationStyle } from './types';
@@ -75,8 +76,9 @@ const ResultDisplay = ({ content, isLoading }: { content: string | React.ReactNo
     }
     if (!content) return null;
 
+    // FIX: The `className` prop is not valid on ReactMarkdown. Wrap it in a div and apply the styles there.
     const contentNode = typeof content === 'string'
-        ? <ReactMarkdown remarkPlugins={[remarkGfm]} className="prose prose-sm prose-invert max-w-none prose-p:leading-relaxed prose-p:my-4 prose-ul:my-4 prose-ol:my-4 prose-li:my-1 prose-headings:mb-4 prose-headings:mt-6">{content}</ReactMarkdown>
+        ? <div className="prose prose-sm prose-invert max-w-none prose-p:leading-relaxed prose-p:my-4 prose-ul:my-4 prose-ol:my-4 prose-li:my-1 prose-headings:mb-4 prose-headings:mt-6"><ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown></div>
         : content;
 
     return <div className="mt-4 p-4 bg-white/5 rounded-lg max-h-[60vh] overflow-y-auto">{contentNode}</div>;
