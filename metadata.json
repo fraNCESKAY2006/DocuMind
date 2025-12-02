@@ -1,0 +1,5 @@
+{
+  "name": "DocuMind",
+  "description": "An intelligent document analysis workspace powered by Gemini. Add documents to generate summaries, extract keywords, citations, and gain insights instantly.",
+  "requestFramePermissions": []
+}
