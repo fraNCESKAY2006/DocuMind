@@ -13,7 +13,8 @@ import {
   X,
   Loader2,
   ChevronRight,
-  Menu
+  Menu,
+  Sparkles
 } from 'lucide-react';
 
 export const Icons = {
@@ -30,5 +31,6 @@ export const Icons = {
   Close: X,
   Spinner: Loader2,
   ArrowRight: ChevronRight,
-  Menu
+  Menu,
+  Sparkles
 };

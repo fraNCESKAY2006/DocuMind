@@ -13,6 +13,10 @@ const App: React.FC = () => {
   const [selectedDocId, setSelectedDocId] = useState<string | null>(null);
   const [currentResult, setCurrentResult] = useState<AnalysisResult | null>(null);
   
+  // Mobile UI state
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileToolsOpen, setIsMobileToolsOpen] = useState(false);
+  
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const selectedDocument = documents.find(d => d.id === selectedDocId) || null;
@@ -93,7 +97,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen bg-slate-900 text-slate-200 overflow-hidden">
+    <div className="flex h-screen bg-slate-900 text-slate-200 overflow-hidden relative">
       {/* Hidden File Input */}
       <input 
         type="file" 
@@ -106,20 +110,28 @@ const App: React.FC = () => {
       <LeftSidebar 
         documents={documents}
         selectedDocId={selectedDocId}
-        onSelectDoc={setSelectedDocId}
+        onSelectDoc={(id) => {
+          setSelectedDocId(id);
+        }}
         onAddClick={handleAddClick}
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
       />
 
       <MainArea 
         document={selectedDocument}
         onDrop={handleFileProcess}
         onAddClick={handleAddClick}
+        onOpenMenu={() => setIsMobileMenuOpen(true)}
+        onOpenTools={() => setIsMobileToolsOpen(true)}
       />
 
       <RightPanel 
         document={selectedDocument}
         onRunTool={handleRunTool}
         currentResult={currentResult}
+        isOpen={isMobileToolsOpen}
+        onClose={() => setIsMobileToolsOpen(false)}
       />
     </div>
   );
