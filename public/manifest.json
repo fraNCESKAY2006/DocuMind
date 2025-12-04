@@ -12,6 +12,7 @@
     {
       "src": "https://docu-topaz.vercel.app/assets/documents-158461_1920-BYgvOCmB.png",
       "type": "image/png",
+      "purpose": "any",
       "sizes": "1920x1757",
       "isSquare": true,
       "isPng": true,
