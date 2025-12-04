@@ -1,21 +1,28 @@
 {
-  "name": "Document AIReader",
-  "short_name": "DocuMind",
-  "description": "An AI-powered document reader that analyzes, explains, and summarizes text instantly.",
-  "start_url": "/",
-  "display": "standalone",
   "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "DocumentMind",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "DocuMind-Ai",
+  "start_url": "/",
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "/documents-158461_1920.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/documents-158461_1920.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "https://docu-topaz.vercel.app/assets/documents-158461_1920-BYgvOCmB.png",
+      "type": "image/png",
+      "sizes": "1920x1757",
+      "isSquare": false,
+      "isPng": true,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 1920,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
     }
-  ]
+  ],
+  "id": "https://docu-topaz.vercel.app/",
+  "description": "An AI-powered document reader that analyzes, explains, and summarizes text instantly."
 }
